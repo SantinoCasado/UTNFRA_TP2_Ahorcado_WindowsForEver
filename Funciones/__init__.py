@@ -4,3 +4,4 @@ from .guardar_puntaje import *
 from .jugar import *
 from .read_write import *
 from .Validate import *
+from mensajes import *

@@ -1,8 +1,8 @@
-from read_write import *
 from elegir_palabra import *
 from etapas_monigote import *
 from guardar_puntaje import *
 from Validate import validar_letra
+from mensajes import *
 
 
 def posicion_letra (letra, palabra):
@@ -29,7 +29,7 @@ def jugar(idioma, nombre_jugador):
         print("Letras usadas: ", letras_usadas)
         print(palabra_oculta)
         letra = str(input("Ingrese una letra: ")).lower()
-        while len(letra) > 0 or letra == "" or not letra.isalpha():
+        while len(letra) > 1 or letra == "":
             print("Seleccione UNA LETRA")
             letra = str(input("Ingrese una letra: ")).lower()
         
@@ -60,13 +60,14 @@ def jugar(idioma, nombre_jugador):
         
         #Validamos si adivino la palabra
         if "_" not in palabra_oculta: 
-            print("¡Felicidades! Has adivinado la palabra:", palabra) 
+            print(efecto_victoria())
             print("Puntaje guardado.")
             flag = False
         
-
-    print("\nHas perdido. La palabra era:", palabra) 
-    dibujar_monigote(intento_actual)
+    if intento_actual >= intentos_max: 
+        dibujar_monigote(intento_actual)
+        print(efecto_derrota())
+        print("La palabra era:", palabra)
 
     guardar_puntaje("scores.json", nombre_jugador, puntaje) 
     print("Puntaje guardado.")

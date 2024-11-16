@@ -1,5 +1,6 @@
 from Funciones import *
 
+
 flag =  True
 def ahorcados():
     while flag:
