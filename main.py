@@ -2,9 +2,21 @@ from Funciones import *
 
 archivo_puntajes =  "scores.json"
 
+menu = '''
+---- Menú de opciones ----
+
+1. Jugar. 
+2. Puntaje. 
+3. Salir.
+
+Ingrese la opcion deseada: '''
+
+
+
 def game():
+    print ("BIENVENIDO AL JUEGO DEL AHORCADO")
     while True:
-        opcion = get_int("BIENVENIDO AL JUEGO DEL AHORCADO\n---- Menú de opciones ----\n1. Jugar. \n2. Puntaje. \n3. Salir.\nIngrese la opcion deseada: ","Error, opcion inexistente",1,3,50)
+        opcion = get_int(menu,"Error, opcion inexistente",1,3,50)
 
 
         match opcion:
@@ -17,7 +29,6 @@ def game():
                     seleccion_idioma = input("Ingrese el luegage que quiera [ES | EN]: ").upper()
 
                 jugar(seleccion_idioma)
-                print("-" * 40)
                 pass
             case 2:
                 print("*" * 40)

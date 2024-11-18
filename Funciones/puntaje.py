@@ -67,12 +67,16 @@ def cargar_puntaje(nombre_usuario: str, puntaje: int, nombre_archivo: str) -> No
     escribir_archivo_json(puntajes, nombre_archivo)
 
     # Mostramos los 5 mejores puntajes de la lista.
+    print("*" * 40)
     for i in range(len(puntajes["jugador"])):
         if i <= 4:
             nombre = puntajes["jugador"][i]['nombre']
             puntaje = puntajes["jugador"][i]['puntaje']
             
+            
             print(f'{i + 1}. {nombre} - {puntaje} puntos.')
+            print("-" * 40)
+    print("*" * 40)
 
 
 # Función auxiliar para incializar el archivo JSON de puntajes con diccionario.
