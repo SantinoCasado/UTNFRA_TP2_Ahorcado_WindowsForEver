@@ -60,4 +60,5 @@ def dibujar_monigote(intento_actual):
               |
         """
     ]
+    #Dependiendo en que intento este el jugador se imprimira un monigote en especifico
     print(etapa[intento_actual])

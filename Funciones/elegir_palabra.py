@@ -1,8 +1,10 @@
-import random
-from read_write import *
+import random 
+from .lectura_escritura_json import * 
 import json
 
+# Establecemeos nombre del archivo
 nombre_archivo_data = "data.json"
+# Utilizando un diccionario generamos los contenidos
 datos = {
     "ahorcado": [
         {
@@ -60,8 +62,11 @@ datos = {
 
 #Punto A/B
 def eleccion_aleatoria (idiomna):
-    carga = write_archiv_json(datos, nombre_archivo_data)
-    informacion = read_archiv_json(nombre_archivo_data)
+    # Cargamos el archivo con los datos
+    escribir_archivo_json(datos, nombre_archivo_data)
+    # Guardamos en una variabel toda el contenido
+    informacion = leer_archivo_json(nombre_archivo_data)
 
+    # Utilizando el random selecciona una palabra DEPENDIENDO del idioma
     eleccion_aleatoria = random.choice(informacion["ahorcado"])
     return eleccion_aleatoria[idiomna]

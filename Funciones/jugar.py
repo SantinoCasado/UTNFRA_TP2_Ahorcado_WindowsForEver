@@ -1,19 +1,26 @@
-from elegir_palabra import *
-from etapas_monigote import *
-from guardar_puntaje import *
-from Validate import validar_letra
-from mensajes import *
+from .lectura_escritura_json import escribir_archivo_json, leer_archivo_json
+from .elegir_palabra import eleccion_aleatoria 
+from .etapas_monigote import dibujar_monigote 
+from .puntaje import cargar_puntaje 
+from .validate import validar_letra
+from .mensajes import efecto_victoria, efecto_derrota
 
+#Establezco el nombre del archivo
+nombre_archivo_puntajes = "scores.json"
 
+# Creamos una funcion para identificar en que posicion/es de la palabra se encuentra la letra que el jugador escribio
 def posicion_letra (letra, palabra):
     posiciones = []
+    # Recorremos la palabra
     for i in range (len(palabra)):
         if letra == palabra[i]:
             posiciones.append(i)
+    # Retornamos una lista con el/los indice/s en que la/s letra/s fue/ron encontrada/s
     return posiciones
 
-def jugar(idioma, nombre_jugador):
-    #Asignamos variables necesarias 
+
+def jugar(idioma):
+    #Asignamos variables necesarias
     intentos_max = 6 
     intento_actual = 0 
     palabra = eleccion_aleatoria(idioma) 
@@ -23,13 +30,15 @@ def jugar(idioma, nombre_jugador):
     puntaje = 0
     
     #Inciamos el juego
-    while intento_actual < intentos_max: 
+    while intento_actual < intentos_max:
+        # Inicializamos el monigote, mostramos los intentos restantes, una lista con las letras usadas y la palabra oculta con los renglones 
         dibujar_monigote(intento_actual)
         print("Intentos restantes: ", intentos_max - intento_actual)
         print("Letras usadas: ", letras_usadas)
         print(palabra_oculta)
         letra = str(input("Ingrese una letra: ")).lower()
-        while len(letra) > 1 or letra == "":
+        #Validamos que no escriba nada, mas de una letra o algo que no sea una letra
+        while len(letra) > 1 or letra == "" or (not letra.isalpha()):
             print("Seleccione UNA LETRA")
             letra = str(input("Ingrese una letra: ")).lower()
         
@@ -61,16 +70,25 @@ def jugar(idioma, nombre_jugador):
         #Validamos si adivino la palabra
         if "_" not in palabra_oculta: 
             print(efecto_victoria())
+            nombre_ingresado = input("Introduzca su nombre de jugador: ").lower()
+            # Validamos que el nombre solo incluya letras
+            while  not nombre_ingresado.isalpha():
+                print("INGRESE SOLO LETRAS!!!")
+                nombre_ingresado = input("Introduzca su nombre de jugador: ").lower()
             print("Puntaje guardado.")
-            flag = False
+            break
         
-    if intento_actual >= intentos_max: 
+    # Si no le quedan mas intentos
+    if intento_actual == intentos_max:
+        # Dibuja al monigote ahorcado, el efecto de dorrota y que palabra era
         dibujar_monigote(intento_actual)
         print(efecto_derrota())
         print("La palabra era:", palabra)
-
-    guardar_puntaje("scores.json", nombre_jugador, puntaje) 
-    print("Puntaje guardado.")
-
-
-jugar("ES", "santino")
+        nombre_ingresado = input("Introduzca su nombre de jugador: ").lower()
+        while  not nombre_ingresado.isalpha():
+            print("INGRESE SOLO LETRAS!!!")
+            nombre_ingresado = input("Introduzca su nombre de jugador: ").lower()
+        print("Puntaje guardado.")
+    
+    #Cargamos el puntaje en el archivo scores
+    cargar_puntaje(nombre_ingresado, puntaje, nombre_archivo_puntajes) 

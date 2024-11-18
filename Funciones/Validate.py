@@ -1,10 +1,9 @@
-def validate_number(number, min, max) :
+def validate_number(dato: int) -> bool:
     try:
-        if min <= number <= max:
-            return number
-        
+        int(dato)
+        return True
     except ValueError:
-        return None
+        return  False
 
 def validate_lenght(str,lenght):
     try:
@@ -14,17 +13,29 @@ def validate_lenght(str,lenght):
     except ValueError:
         return None
 
-def get_int(mensaje:str,mensaje_error:str,minimo:int,maximo:int,reintentos:int):
+def get_int(mensaje: str, mensaje_error: str, minimo: int, maximo: int, reintentos: int) -> (int | None):
+    dato_ingresado = input(mensaje)
     
-    for _ in range(reintentos):
-        user_input = int(input(mensaje))
-        numero = validate_number(user_input,minimo,maximo)
-        if numero is not None:
-            return numero
-        else: 
+    # Primero validamos el tipo de dato.
+    if validate_number(dato_ingresado):
+        dato_convertido = int(dato_ingresado)
+        
+        # Luego validamos que se encuentre dentro del rango.
+        if dato_convertido >= minimo and dato_convertido <= maximo:
+            return dato_convertido
+        else:
             print(mensaje_error)
-    return None
-    
+            if reintentos > 0:
+                return get_int(mensaje, mensaje_error, minimo, maximo, reintentos - 1)
+            else:
+                return None
+    else:
+        print(mensaje_error)
+        if reintentos > 0:
+            return get_int(mensaje, mensaje_error, minimo, maximo, reintentos - 1)
+        else:
+            return None
+
 def get_str(mensaje:str,mensaje_error:str, longitud:int) -> str|None: 
     user_input = str(input(mensaje))
     string = validate_lenght(user_input,longitud)
