@@ -4,4 +4,4 @@ from .puntaje import *
 from .jugar import * 
 from .lectura_escritura_json import * 
 from .mensajes import * 
-from .validate import *
+from .Validate import *

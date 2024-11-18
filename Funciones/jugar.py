@@ -2,7 +2,7 @@ from .lectura_escritura_json import escribir_archivo_json, leer_archivo_json
 from .elegir_palabra import eleccion_aleatoria 
 from .etapas_monigote import dibujar_monigote 
 from .puntaje import cargar_puntaje 
-from .validate import validar_letra
+from .Validate import validar_letra
 from .mensajes import efecto_victoria, efecto_derrota
 
 #Establezco el nombre del archivo
@@ -34,8 +34,11 @@ def jugar(idioma):
         # Inicializamos el monigote, mostramos los intentos restantes, una lista con las letras usadas y la palabra oculta con los renglones 
         dibujar_monigote(intento_actual)
         print("Intentos restantes: ", intentos_max - intento_actual)
-        print("Letras usadas: ", letras_usadas)
-        print(palabra_oculta)
+        # print("Letras usadas: ", letras_usadas) # Esta línea es la que estaba antes. Las siguientes 3 las agregué para que se muestre mejor.
+        print("Letras usadas:", end=' ')
+        for i in range(len(letras_usadas)):
+            print(letras_usadas[i], end='|')
+        print("\n",palabra_oculta)
         letra = str(input("Ingrese una letra: ")).lower()
         #Validamos que no escriba nada, mas de una letra o algo que no sea una letra
         while len(letra) > 1 or letra == "" or (not letra.isalpha()):
