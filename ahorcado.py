@@ -32,7 +32,10 @@ def game():
                 pass
             case 2:
                 print("*" * 40)
-                mostrar_mejores_puntajes(archivo_puntajes)
+                if mostrar_mejores_puntajes(archivo_puntajes):
+                    pass
+                else:
+                    print("No hay puntajes registrados")
                 print("*" * 40)
             case 3:
 
