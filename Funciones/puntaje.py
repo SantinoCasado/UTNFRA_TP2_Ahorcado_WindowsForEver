@@ -78,8 +78,7 @@ def cargar_puntaje(nombre_usuario: str, puntaje: int, nombre_archivo: str) -> No
         if i <= 4:
             nombre = puntajes["jugador"][i]['nombre']
             puntaje = puntajes["jugador"][i]['puntaje']
-            
-            
+
             print(f'{i + 1}. {nombre} - {puntaje} puntos.')
             print("-" * 40)
     print("*" * 40)
