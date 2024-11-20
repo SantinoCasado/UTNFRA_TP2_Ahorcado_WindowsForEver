@@ -34,7 +34,6 @@ def jugar(idioma):
         # Inicializamos el monigote, mostramos los intentos restantes, una lista con las letras usadas y la palabra oculta con los renglones 
         dibujar_monigote(intento_actual)
         print("Intentos restantes: ", intentos_max - intento_actual)
-        # print("Letras usadas: ", letras_usadas) # Esta línea es la que estaba antes. Las siguientes 3 las agregué para que se muestre mejor.
         print("Letras usadas:", end=' ')
         for i in range(len(letras_usadas)):
             print(letras_usadas[i], end='|')
