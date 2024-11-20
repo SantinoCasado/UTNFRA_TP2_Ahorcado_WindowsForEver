@@ -67,7 +67,7 @@ def jugar(idioma):
         #Si no le pega
         else:
             intento_actual += 1
-            print("Letra incorrecta")
+            print("Letra incorrecta papu")
         
         #Validamos si adivino la palabra
         if "_" not in palabra_oculta: 
