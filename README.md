@@ -1,6 +1,6 @@
 Grupo Windows_For_Ever </br>
 </br>
 Integrantes: </br>
-  Casado Santino </br>
-  Cotti Luciano </br>
-  Antunez Roman </br>
+  </br> Casado Santino </br>
+  </br> Cotti Luciano </br>
+  </br> Antunez Roman </br>
