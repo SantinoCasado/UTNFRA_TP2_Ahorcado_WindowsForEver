@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Juego del Ahorcado en Consola</title>
-  <style>
+<style>
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
