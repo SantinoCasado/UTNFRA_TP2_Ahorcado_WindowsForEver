@@ -1,9 +1,43 @@
-🕹️ Juego del Ahorcado en Consola (Python)
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego del Ahorcado en Consola</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+    .emoji {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
 
-🎯 Objetivo
-Desarrollar el clásico juego del Ahorcado en modo texto utilizando Python. El jugador deberá adivinar una palabra antes de que se complete el monigote. Las palabras estarán almacenadas en un archivo JSON en español e inglés.
+  <h1 class="emoji">🕹️ Juego del Ahorcado en Consola (Python)</h1>
 
-📁 Estructura del Proyecto
+  <h2 class="emoji">🎯 Objetivo</h2>
+  <p>Desarrollar el clásico juego del Ahorcado en modo texto utilizando Python. El jugador deberá adivinar una palabra antes de que se complete el monigote. Las palabras estarán almacenadas en un archivo JSON en español e inglés.</p>
+
+  <h2 class="emoji">📁 Estructura del Proyecto</h2>
+  <pre>
 ahorcado/
 ├── data.json           # Palabras en español e inglés
 ├── scores.json         # Puntajes guardados
@@ -13,62 +47,71 @@ ahorcado/
 │   ├── score_manager.py# Gestión de puntajes
 │   └── display.py      # Representación del monigote y menú
 └── README.md
+  </pre>
 
+  <h2 class="emoji">🧰 Requisitos Técnicos</h2>
+  <h3 class="emoji">🔧 Herramientas necesarias</h3>
+  <ul>
+    <li>Visual Studio Code</li>
+    <li>Python 3.10 o superior</li>
+    <li>Extensión de Python para VS Code</li>
+    <li>Terminal integrada o externa</li>
+  </ul>
 
+  <h3 class="emoji">📦 Librerías utilizadas</h3>
+  <ul>
+    <li><code>json</code> (incluida en la biblioteca estándar)</li>
+    <li><code>random</code> (para selección aleatoria)</li>
+  </ul>
 
-🧰 Requisitos Técnicos
+  <h2 class="emoji">🚀 Cómo Ejecutar el Proyecto</h2>
+  <ul>
+    <li>Clona el repositorio o descarga los archivos.</li>
+    <li>Abre la carpeta en Visual Studio Code.</li>
+    <li>Asegúrate de tener Python instalado y configurado.</li>
+    <li>Ejecuta el archivo principal:</li>
+  </ul>
+  <pre>python hangman.py</pre>
+  <p>Sigue las instrucciones en consola para jugar.</p>
 
-  🔧 Herramientas necesarias
-    - Visual Studio Code
-    - Python 3.10 o superior
-    - Extensión de Python para VS Code
-    - Terminal integrada o externa
-    
-  📦 Librerías utilizadas
-    - json (incluida en la biblioteca estándar)
-    - random (para selección aleatoria)
+  <h2 class="emoji">🧠 Funcionalidades Clave</h2>
+  <ul>
+    <li>Selección de idioma (Español/Inglés)</li>
+    <li>Representación progresiva del monigote</li>
+    <li>Sistema de puntaje por letra y palabra completa</li>
+    <li>Guardado de puntajes en <code>scores.json</code></li>
+    <li>Menú interactivo con opciones: Jugar, Puntajes, Salir</li>
+    <li>Visualización de los 5 mejores puntajes</li>
+  </ul>
 
-🚀 Cómo Ejecutar el Proyecto
-  - Clona el repositorio o descarga los archivos.
-  - Abre la carpeta en Visual Studio Code.
-  - Asegúrate de tener Python instalado y configurado.
-  - Ejecuta el archivo principal:
-      python hangman.py
-  - Sigue las instrucciones en consola para jugar.
+  <h2 class="emoji">🌟 Mejoras Opcionales</h2>
+  <ul>
+    <li>Animaciones de texto con <code>time.sleep()</code> y efectos ASCII</li>
+    <li>Mensajes personalizados para aciertos y errores</li>
+    <li>Colores en consola usando <code>colorama</code> (opcional)</li>
+  </ul>
 
-🧠 Funcionalidades Clave
-  - Selección de idioma (Español/Inglés)
-  - Representación progresiva del monigote
-  - Sistema de puntaje por letra y palabra completa
-  - Guardado de puntajes en scores.json
-  - Menú interactivo con opciones: Jugar, Puntajes, Salir
-  - Visualización de los 5 mejores puntajes
-
-🌟 Mejoras Opcionales
-    - Animaciones de texto con time.sleep() y efectos ASCII
-    - Mensajes personalizados para aciertos y errores
-    - Colores en consola usando colorama (opcional)
-
-
-📌 Ejemplo de Monigote en Texto
+  <h2 class="emoji">📌 Ejemplo de Monigote en Texto</h2>
+  <pre>
  +---+
  |   O
  |  /|\
  |  / \
  |
 =========
+  </pre>
 
-
-📈 Ejemplo de Puntajes
+  <h2 class="emoji">📈 Ejemplo de Puntajes</h2>
+  <pre>
 [
   {"nombre": "Santino", "puntaje": 15},
   {"nombre": "Lucía", "puntaje": 12},
   {"nombre": "Tomás", "puntaje": 10}
 ]
+  </pre>
 
+  <h2 class="emoji">💬 Créditos y Autoría</h2>
+  <p>Desarrollado como ejercicio académico para practicar estructuras, validaciones y lógica de juego en Python. Ideal para reforzar el uso de archivos, funciones, y modularidad.</p>
 
-
-💬 Créditos y Autoría
-Desarrollado como ejercicio académico para practicar estructuras, validaciones y lógica de juego en Python. Ideal para reforzar el uso de archivos, funciones, y modularidad.
-
-¿Querés que te ayude a escribir el código base modular por carpetas como lo hacés en tus proyectos? También puedo ayudarte a refactorizarlo con validaciones defensivas y separación por responsabilidades.
+</body>
+</html>
