@@ -1,29 +1,3 @@
-<style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 40px;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    h1, h2 {
-      color: #2c3e50;
-    }
-    pre {
-      background-color: #eee;
-      padding: 10px;
-      border-radius: 5px;
-      overflow-x: auto;
-    }
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
-    }
-    .emoji {
-      font-size: 1.2em;
-    }
-  </style>
-</head>
 <body>
 
   <h1 class="emoji">🕹️ Juego del Ahorcado en Consola (Python)</h1>
