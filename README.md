@@ -1,72 +1,74 @@
-Objetivo:
-Desarrollar el clásico juego del Ahorcado en una versión de consola en Python. Los
-estudiantes deberán implementar todas las funcionalidades necesarias para que el juego
-sea jugable en modo texto.
+🕹️ Juego del Ahorcado en Consola (Python)
 
-Detalles del Ejercicio:
-El juego del Ahorcado consiste en adivinar una palabra letra por letra antes de que el
-monigote del ahorcado se complete. Los datos de las palabras estarán almacenados en un
-archivo JSON.
+🎯 Objetivo
+Desarrollar el clásico juego del Ahorcado en modo texto utilizando Python. El jugador deberá adivinar una palabra antes de que se complete el monigote. Las palabras estarán almacenadas en un archivo JSON en español e inglés.
 
-Datos iniciales en archivo JSON (data.json):
-● ID
-● Palabra en español
-● Palabra en inglés
+📁 Estructura del Proyecto
+ahorcado/
+├── data.json           # Palabras en español e inglés
+├── scores.json         # Puntajes guardados
+├── hangman.py          # Lógica principal del juego
+├── utils/
+│   ├── loader.py       # Carga de archivos JSON
+│   ├── score_manager.py# Gestión de puntajes
+│   └── display.py      # Representación del monigote y menú
+└── README.md
 
-Requerimientos:
-A. Cargar el archivo data.json.
-● Cargar un archivo JSON con palabras en español e inglés.
-● Permitir que el juego seleccione aleatoriamente una palabra para adivinar.
 
-B. Selección de idioma.
-● Agregar la opción para seleccionar el idioma de las palabras en español o en inglés
-al inicio del juego.
 
-C. Representación del Monigote en Consola.
-● Representar el monigote en la consola con texto. La figura debe mostrarse
-progresivamente a medida que el jugador falla intentos. El monigote se debe
-construir de la siguiente manera:
-○ Cabeza
-○ Tórax
-○ Brazo izquierdo
-○ Brazo derecho
-○ Pierna izquierda
-○ Pierna derecha
+🧰 Requisitos Técnicos
 
-D. Lógica del Juego.
-● El jugador tendrá seis (6) intentos para adivinar la palabra.
-● Por cada intento fallido, se añadirá una parte al monigote.
-● Si el jugador adivina una letra correctamente, se descubrirá esa letra en la palabra
-oculta.
-● Mostrar las letras usadas y la palabra con las letras descubiertas después de cada
-intento.
+  🔧 Herramientas necesarias
+    - Visual Studio Code
+    - Python 3.10 o superior
+    - Extensión de Python para VS Code
+    - Terminal integrada o externa
+    
+  📦 Librerías utilizadas
+    - json (incluida en la biblioteca estándar)
+    - random (para selección aleatoria)
 
-E. Sistema de Puntaje.
-● Por cada letra correcta adivinada, el jugador recibirá un punto.
-● Al descubrir la palabra, el jugador suma puntos en base a la cantidad de letras de la
-palabra.
+🚀 Cómo Ejecutar el Proyecto
+  - Clona el repositorio o descarga los archivos.
+  - Abre la carpeta en Visual Studio Code.
+  - Asegúrate de tener Python instalado y configurado.
+  - Ejecuta el archivo principal:
+      python hangman.py
+  - Sigue las instrucciones en consola para jugar.
 
-F. Guardado de Puntaje en Archivo JSON.
-● Al finalizar el juego, pedir el nombre del jugador y almacenar el puntaje en un archivo
-scores.json.
-● Mostrar los cinco (5) mejores puntajes al final de cada partida.
+🧠 Funcionalidades Clave
+  - Selección de idioma (Español/Inglés)
+  - Representación progresiva del monigote
+  - Sistema de puntaje por letra y palabra completa
+  - Guardado de puntajes en scores.json
+  - Menú interactivo con opciones: Jugar, Puntajes, Salir
+  - Visualización de los 5 mejores puntajes
 
-G. Interfaz del Menú en Consola.
-● Incluir un menú inicial en consola con las siguientes opciones:
-1. Jugar
-2. Puntajes
-3. Salir
+🌟 Mejoras Opcionales
+    - Animaciones de texto con time.sleep() y efectos ASCII
+    - Mensajes personalizados para aciertos y errores
+    - Colores en consola usando colorama (opcional)
 
-H. Mostrar los Mejores Puntajes
-● La opción "Puntajes" del menú debe mostrar los cinco mejores puntajes junto con el
-nombre del jugador, en orden descendente.
 
-Opcional:
+📌 Ejemplo de Monigote en Texto
+ +---+
+ |   O
+ |  /|\
+ |  / \
+ |
+=========
 
-1. Efectos Visuales:
-○ Añadir una animación de texto o símbolos para hacer el juego más visual y
-entretenido.
 
-2. Mensajes Personalizados:
-○ Agregar mensajes personalizados cada vez que se adivine una letra o
-cuando el jugador pierda.
+📈 Ejemplo de Puntajes
+[
+  {"nombre": "Santino", "puntaje": 15},
+  {"nombre": "Lucía", "puntaje": 12},
+  {"nombre": "Tomás", "puntaje": 10}
+]
+
+
+
+💬 Créditos y Autoría
+Desarrollado como ejercicio académico para practicar estructuras, validaciones y lógica de juego en Python. Ideal para reforzar el uso de archivos, funciones, y modularidad.
+
+¿Querés que te ayude a escribir el código base modular por carpetas como lo hacés en tus proyectos? También puedo ayudarte a refactorizarlo con validaciones defensivas y separación por responsabilidades.
